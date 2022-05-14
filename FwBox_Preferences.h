@@ -66,8 +66,6 @@ public:
     int32_t getInt(const char* key, int32_t defaultValue = 0);
     String getString(const char* key, String defaultValue = String());
 
-    void dumpPairList();
-
 private:
 #if defined(ESP32)
     Preferences Prefs;
@@ -75,6 +73,8 @@ private:
     String PairListFileName = "";
     KeyValue PairList[20];
     int PairCount = 0;
+
+    void dumpPairList();
     void readPairListFromFile();
     void savePairListToFile();
     String readFile(const char * path);

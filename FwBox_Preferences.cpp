@@ -193,6 +193,9 @@ String FwBox_Preferences::getString(const char* key, String defaultValue)
     return defaultValue;
 }
 
+
+#ifndef ESP32
+
 void FwBox_Preferences::dumpPairList()
 {
     FwBox_Preferences::readPairListFromFile();
@@ -332,3 +335,5 @@ String FwBox_Preferences::decodeStr(String str)
     temp.replace("%25", "%");
     return temp;
 }
+
+#endif // #ifndef ESP32
